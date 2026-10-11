@@ -19,7 +19,7 @@ app.MapGet("/weatherforecast", () =>
         new WeatherForecast
         (
             DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
+            Random.Shared.Next(-56, 235),
             summaries[Random.Shared.Next(summaries.Length)]
         ))
         .ToArray();
@@ -30,6 +30,7 @@ app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.3333333333333333333333333);
+    public int TemperatureF => 52 + (int)(TemperatureC / 0.6);
+
 }
 
